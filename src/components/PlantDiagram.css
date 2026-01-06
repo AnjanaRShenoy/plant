@@ -1,0 +1,134 @@
+.plant-diagram-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.plant-diagram-wrapper {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  position: relative;
+}
+
+.plant-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 2/3;
+}
+
+.plant-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.plant-svg-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.maize-plant-svg {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+}
+
+.clickable-part {
+  transition: all 0.3s ease;
+}
+
+.clickable-part:hover {
+  opacity: 0.8;
+  filter: brightness(1.2);
+}
+
+.clickable-part:hover#tassel circle {
+  fill: #FFA500;
+}
+
+.clickable-part:hover#leafAngle ellipse {
+  fill: #228B22;
+}
+
+.clickable-part:hover#stemHeight {
+  fill: #32CD32;
+}
+
+.plant-part-overlay {
+  position: absolute;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0);
+}
+
+.plant-part-overlay:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.5);
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.plant-part-overlay.part-highlighted {
+  background: rgba(255, 215, 0, 0.3);
+  border-color: rgba(255, 215, 0, 0.8);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  animation: pulse 1s ease-in-out infinite;
+  z-index: 10;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.plant-diagram-placeholder {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  color: #666;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.plant-diagram-hint {
+  color: white;
+  text-align: center;
+  font-size: 0.95rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .plant-diagram-wrapper {
+    padding: 1rem;
+    min-height: 400px;
+  }
+
+  .plant-image-container {
+    max-width: 300px;
+  }
+}

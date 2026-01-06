@@ -1,0 +1,250 @@
+.gene-info-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 1rem;
+}
+
+.gene-info-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.gene-info-header {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 2rem;
+  position: relative;
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-5px);
+}
+
+.gene-info-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gene-info-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.trait-tabs {
+  display: flex;
+  background: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+  padding: 0;
+  margin: 0;
+}
+
+.trait-tab {
+  flex: 1;
+  padding: 1.25rem 2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6c757d;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.trait-tab:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+.trait-tab.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+  background: white;
+}
+
+.trait-content {
+  padding: 2.5rem;
+}
+
+.trait-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.trait-name {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+}
+
+.trait-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #495057;
+  margin: 0;
+  text-align: justify;
+}
+
+.genes-section {
+  margin-top: 2rem;
+}
+
+.genes-section-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 0 0 1.5rem 0;
+  font-weight: 600;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #667eea;
+  display: inline-block;
+}
+
+.genes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gene-card {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid #667eea;
+}
+
+.gene-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-left-color: #764ba2;
+}
+
+.gene-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.gene-name {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: 600;
+}
+
+.gene-symbol {
+  background: #667eea;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  font-family: 'Courier New', monospace;
+}
+
+.gene-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.gene-detail-section {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+.gene-detail-label {
+  font-size: 1rem;
+  color: #667eea;
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+}
+
+.gene-detail-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #495057;
+  margin: 0;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .gene-info-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .gene-info-header {
+    padding: 1.5rem;
+  }
+
+  .gene-info-title {
+    font-size: 1.75rem;
+  }
+
+  .trait-tabs {
+    flex-direction: column;
+  }
+
+  .trait-tab {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    border-left: 3px solid transparent;
+  }
+
+  .trait-tab.active {
+    border-left-color: #667eea;
+    border-bottom-color: #e9ecef;
+  }
+
+  .trait-content {
+    padding: 1.5rem;
+  }
+
+  .trait-name {
+    font-size: 1.5rem;
+  }
+
+  .gene-card {
+    padding: 1.25rem;
+  }
+
+  .gene-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+

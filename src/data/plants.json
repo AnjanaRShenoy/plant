@@ -1,0 +1,39 @@
+[
+  {
+    "id": "maize",
+    "name": "Maize (Corn)",
+    "image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=600&fit=crop",
+    "parts": [
+      {
+        "id": "tassel",
+        "name": "Tassel",
+        "elementId": "tassel",
+        "coords": { "top": "5%", "left": "35%", "width": "30%", "height": "20%" },
+        "description": "The tassel is the male inflorescence of the maize plant, located at the top of the plant. It produces pollen for fertilization.",
+        "function": "Male reproduction, pollen production",
+        "hasGeneInfo": true,
+        "geneTrait": "tassel"
+      },
+      {
+        "id": "leafAngle",
+        "name": "Leaf Angle",
+        "elementId": "leafAngle",
+        "coords": { "top": "45%", "left": "25%", "width": "50%", "height": "25%" },
+        "description": "Leaf angle refers to the angle at which leaves are attached to the stem. This trait affects light capture and canopy architecture.",
+        "function": "Light capture optimization, canopy structure",
+        "hasGeneInfo": true,
+        "geneTrait": "leafAngle"
+      },
+      {
+        "id": "stemHeight",
+        "name": "Stem Total Height",
+        "elementId": "stemHeight",
+        "coords": { "top": "25%", "left": "47%", "width": "6%", "height": "60%" },
+        "description": "Stem total height is a critical agronomic trait that affects plant architecture, lodging resistance, and yield potential.",
+        "function": "Structural support, resource allocation",
+        "hasGeneInfo": true,
+        "geneTrait": "stemHeight"
+      }
+    ]
+  }
+]

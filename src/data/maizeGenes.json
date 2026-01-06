@@ -1,0 +1,126 @@
+{
+  "tassel": {
+    "trait": "Tassel Development",
+    "description": "The tassel is the male inflorescence of maize, responsible for pollen production. Its development is controlled by multiple genes that regulate meristem identity, branching patterns, and floral organ formation.",
+    "genes": [
+      {
+        "name": "Tassels replace upper ears 1",
+        "symbol": "TRA1",
+        "function": "Regulates the transition from vegetative to reproductive meristem. Mutations in TRA1 cause tassel branches to be replaced by ear-like structures.",
+        "pathway": "Floral meristem identity pathway",
+        "research": "TRA1 encodes a transcription factor that acts upstream of other tassel development genes. Studies show it interacts with AP2-like genes to maintain tassel identity. Loss-of-function mutants exhibit homeotic transformations where tassel branches develop as ears."
+      },
+      {
+        "name": "Tasselseed 4",
+        "symbol": "TS4",
+        "function": "Controls sex determination in the tassel. Prevents development of female flowers in the tassel by suppressing carpel development.",
+        "pathway": "Sex determination pathway",
+        "research": "TS4 is a member of the TASSELSEED gene family. It functions to maintain male identity in the tassel by repressing genes required for carpel development. The gene is expressed specifically in tassel primordia and acts through epigenetic mechanisms."
+      },
+      {
+        "name": "Barren inflorescence 2",
+        "symbol": "BIF2",
+        "function": "Regulates inflorescence branching and meristem maintenance. Required for proper tassel branch initiation and development.",
+        "pathway": "Auxin signaling pathway",
+        "research": "BIF2 encodes a serine/threonine protein kinase that regulates auxin transport. Mutations result in reduced tassel branching and barren inflorescences. The gene is essential for maintaining meristem activity during tassel development."
+      },
+      {
+        "name": "Indeterminate gametophyte 1",
+        "symbol": "IG1",
+        "function": "Controls meristem determinacy in the tassel. Regulates when the meristem stops producing new branches.",
+        "pathway": "Meristem determinacy pathway",
+        "research": "IG1 encodes a transcription factor that promotes meristem determinacy. Loss-of-function mutants show indeterminate growth in tassels, producing excessive branches. The gene acts downstream of meristem identity genes."
+      }
+    ]
+  },
+  "leafAngle": {
+    "trait": "Leaf Angle",
+    "description": "Leaf angle is the angle between the leaf blade and the stem. This trait is crucial for optimizing light capture, reducing mutual shading, and improving canopy photosynthesis efficiency. Modern maize breeding has selected for more upright leaves to increase planting density.",
+    "genes": [
+      {
+        "name": "Liguleless 1",
+        "symbol": "LG1",
+        "function": "Controls ligule and auricle development, which directly affects leaf angle. The ligule is a structure at the junction of leaf blade and sheath that influences leaf positioning.",
+        "pathway": "Leaf development pathway",
+        "research": "LG1 encodes a SQUAMOSA promoter-binding protein (SBP) transcription factor. Mutations in LG1 result in the absence of ligules and auricles, causing leaves to grow more upright. This gene is a major target for breeding programs aiming to improve canopy architecture."
+      },
+      {
+        "name": "Liguleless 2",
+        "symbol": "LG2",
+        "function": "Works in conjunction with LG1 to regulate ligule development and leaf angle. Acts redundantly with LG1 in controlling leaf architecture.",
+        "pathway": "Leaf development pathway",
+        "research": "LG2 encodes a basic leucine zipper (bZIP) transcription factor. Double mutants of lg1 and lg2 show complete absence of ligules and more upright leaves. The gene shows genetic interaction with LG1 in regulating leaf angle."
+      },
+      {
+        "name": "ZmCLA4",
+        "symbol": "ZmCLA4",
+        "function": "Regulates leaf angle through auxin distribution. Controls the asymmetric growth of the leaf base that determines leaf angle.",
+        "pathway": "Auxin signaling and distribution pathway",
+        "research": "ZmCLA4 is a maize ortholog of Arabidopsis CLAVATA genes. It regulates auxin transport in the leaf base region, affecting cell division and expansion patterns that determine leaf angle. Overexpression leads to more upright leaves."
+      },
+      {
+        "name": "ZmILI1",
+        "symbol": "ZmILI1",
+        "function": "Controls leaf angle by regulating cell elongation in the leaf base. Influences the mechanical properties of the leaf-sheath junction.",
+        "pathway": "Cell elongation pathway",
+        "research": "ZmILI1 encodes a protein involved in brassinosteroid signaling. Mutations result in altered leaf angles due to changes in cell elongation patterns. The gene is expressed in the leaf base region where angle is determined."
+      },
+      {
+        "name": "Upright Plant Architecture 1",
+        "symbol": "UPA1",
+        "function": "Major QTL controlling leaf angle. Regulates multiple aspects of leaf architecture including angle, size, and orientation.",
+        "pathway": "Multiple pathways (pleiotropic effect)",
+        "research": "UPA1 is a quantitative trait locus that explains significant variation in leaf angle among maize varieties. Fine-mapping studies have identified candidate genes within this region. The locus has been introgressed into modern hybrids to improve canopy architecture."
+      }
+    ]
+  },
+  "stemHeight": {
+    "trait": "Stem Total Height",
+    "description": "Plant height is a critical agronomic trait controlled by multiple genes and environmental factors. Height affects lodging resistance, planting density, and yield. Dwarfing genes have been important in modern maize breeding to reduce lodging and allow higher planting densities.",
+    "genes": [
+      {
+        "name": "Dwarf 1",
+        "symbol": "D1",
+        "function": "Encodes a key enzyme in gibberellin biosynthesis. Mutations result in dwarf plants due to reduced gibberellin levels.",
+        "pathway": "Gibberellin biosynthesis pathway",
+        "research": "D1 encodes ent-kaurene synthase, the first committed step in gibberellin biosynthesis. d1 mutants are severely dwarfed and show reduced internode elongation. This gene was crucial in the Green Revolution for developing semi-dwarf varieties."
+      },
+      {
+        "name": "Dwarf 3",
+        "symbol": "D3",
+        "function": "Involved in gibberellin signaling. Required for gibberellin response and normal stem elongation.",
+        "pathway": "Gibberellin signaling pathway",
+        "research": "D3 encodes a component of the gibberellin receptor complex. Mutations result in gibberellin-insensitive dwarfism. The gene is orthologous to GID1 in rice and plays a central role in gibberellin perception and signal transduction."
+      },
+      {
+        "name": "Dwarf 8",
+        "symbol": "D8",
+        "function": "Negative regulator of gibberellin signaling. Acts as a repressor that is degraded in the presence of gibberellin.",
+        "pathway": "Gibberellin signaling pathway",
+        "research": "D8 encodes a DELLA protein, a key negative regulator of gibberellin responses. Gain-of-function mutations result in dwarf plants that are insensitive to gibberellin. The protein is degraded upon gibberellin binding to its receptor."
+      },
+      {
+        "name": "Brachytic 2",
+        "symbol": "BR2",
+        "function": "Regulates auxin transport in the stem. Required for normal internode elongation and plant height.",
+        "pathway": "Auxin transport pathway",
+        "research": "BR2 encodes an auxin efflux carrier protein. Mutations result in shortened internodes and reduced plant height. The gene is essential for proper auxin distribution during stem elongation."
+      },
+      {
+        "name": "Plant height 1",
+        "symbol": "PH1",
+        "function": "Major QTL controlling plant height. Regulates multiple aspects of stem development including internode number and length.",
+        "pathway": "Multiple pathways (pleiotropic effect)",
+        "research": "PH1 is a quantitative trait locus that explains significant variation in plant height. It has been mapped and fine-mapped in multiple populations. The locus contains several candidate genes involved in hormone signaling and cell elongation."
+      },
+      {
+        "name": "ZmGA20ox",
+        "symbol": "ZmGA20ox",
+        "function": "Encodes gibberellin 20-oxidase, a key enzyme in gibberellin biosynthesis. Controls the production of active gibberellins that promote stem elongation.",
+        "pathway": "Gibberellin biosynthesis pathway",
+        "research": "ZmGA20ox catalyzes the conversion of GA12 to GA20, a critical step in gibberellin biosynthesis. Overexpression increases plant height, while suppression reduces height. The gene is regulated by feedback mechanisms and environmental cues."
+      }
+    ]
+  }
+}
+
