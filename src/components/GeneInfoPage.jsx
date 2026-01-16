@@ -13,9 +13,15 @@ function GeneInfoPage() {
 
   const traits = ['tassel', 'leafAngle', 'stemHeight'];
   const traitLabels = {
-    tassel: 'Tassel Development',
+    tassel: 'Tassel Morphology',
     leafAngle: 'Leaf Angle',
-    stemHeight: 'Stem Total Height'
+    stemHeight: 'Plant height'
+  };
+
+  const traitImages = {
+    tassel: '/images/tassel.jpg',
+    leafAngle: '/images/leafAngle.jpg',
+    stemHeight: '/images/stemHeight.jpg'
   };
 
   const currentTraitData = maizeGenesData[activeTrait];
@@ -49,6 +55,16 @@ function GeneInfoPage() {
 
         <div className="trait-content">
           <div className="trait-header">
+            <div className="trait-image-container">
+              <img
+                src={traitImages[activeTrait]}
+                alt={currentTraitData.trait}
+                className="trait-image"
+                onError={(e) => {
+                  e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="600"%3E%3Crect width="400" height="600" fill="%23f0f0f0"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%23999"%3EPlant Image%3C/text%3E%3C/svg%3E';
+                }}
+              />
+            </div>
             <h2 className="trait-name">{currentTraitData.trait}</h2>
             <p className="trait-description">{currentTraitData.description}</p>
           </div>

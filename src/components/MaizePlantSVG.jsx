@@ -24,11 +24,11 @@ function MaizePlantSVG({ onPartClick, highlightedPartId }) {
       },
       stemHeight: {
         id: 'stemHeight',
-        name: 'Stem Total Height',
+        name: 'Plant height',
         elementId: 'stemHeight',
         hasGeneInfo: true,
         geneTrait: 'stemHeight',
-        description: 'Stem total height is a critical agronomic trait that affects plant architecture, lodging resistance, and yield potential.',
+        description: 'Plant height is a critical agronomic trait that affects plant architecture, lodging resistance, and yield potential.',
         function: 'Structural support, resource allocation'
       }
     };
@@ -83,7 +83,7 @@ function MaizePlantSVG({ onPartClick, highlightedPartId }) {
       <g
         id="stemHeight"
         className="plant-part clickable-part"
-        onClick={() => handlePartClick("stemHeight", "Stem Total Height")}
+        onClick={() => handlePartClick("stemHeight", "Plant height")}
         style={{ cursor: "pointer" }}
       >
         <path

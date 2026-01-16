@@ -1,5 +1,4 @@
 import React from 'react';
-import MaizePlantSVG from './MaizePlantSVG';
 import './PlantDiagram.css';
 
 function PlantDiagram({ plant, onPartClick, highlightedPartId }) {
@@ -7,19 +6,43 @@ function PlantDiagram({ plant, onPartClick, highlightedPartId }) {
     return <div className="plant-diagram-placeholder">No plant data available</div>;
   }
 
-  // For maize plant, use SVG
+  // For maize plant, show main image with clickable buttons
   if (plant.id === 'maize') {
+    const handlePartClick = (part) => {
+      onPartClick(part);
+    };
+
     return (
       <div className="plant-diagram-container" key={plant.id}>
         <div className="plant-diagram-wrapper">
-          <div className="plant-svg-container">
-            <MaizePlantSVG 
-              onPartClick={onPartClick}
-              highlightedPartId={highlightedPartId}
+          <div className="plant-image-container">
+            <img
+              src={plant.image}
+              alt={plant.name}
+              className="plant-image"
+              key={`img-${plant.id}`}
+              onError={(e) => {
+                e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="600"%3E%3Crect width="400" height="600" fill="%23f0f0f0"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%23999"%3EPlant Image%3C/text%3E%3C/svg%3E';
+              }}
             />
           </div>
         </div>
-        <p className="plant-diagram-hint">Click on Tassel, Leaf Angle, or Stem Height to learn about controlling genes!</p>
+        <div className="plant-image-selector">
+          {plant.parts.map((part) => (
+            <button
+              key={`btn-${part.id || part.elementId}`}
+              className={`image-selector-btn ${highlightedPartId === (part.elementId || part.id) ? 'active' : ''}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePartClick(part);
+              }}
+              title={part.name}
+            >
+              {part.name}
+            </button>
+          ))}
+        </div>
+        <p className="plant-diagram-hint">Click on Tassel, Leaf Angle, or Plant height to learn about controlling genes!</p>
       </div>
     );
   }

@@ -38,8 +38,8 @@ function PlantView() {
     <div className="app">
       <div className="app-container">
         <header className="app-header">
-          <h1 className="app-title">Maize Plant Anatomy</h1>
-          <p className="app-subtitle">Click on Tassel, Leaf Angle, or Stem Height to learn about controlling genes!</p>
+          <h1 className="app-title">Maize Plant Architecture</h1>
+          <p className="app-subtitle">Click on Tassel, Leaf Angle, or Plant height to learn about controlling genes!</p>
         </header>
 
         {selectedPlant && (
@@ -54,6 +54,12 @@ function PlantView() {
         {selectedPart && (
           <PartDetails part={selectedPart} onClose={handleCloseDetails} />
         )}
+
+        <footer className="app-footer">
+          <p className="app-authorship">
+            Developed by Govinda Rai Sarma, Reshmi Chhabra, Amitkumar D. Kyada, Amit Kumar, Gaurav Sharma, Rajkumar U. Zunjare, Vignesh Muthusamy, Firoz Hossain*. © ICAR - Indian Agricultural Research Institute, New Delhi.
+          </p>
+        </footer>
       </div>
     </div>
   );

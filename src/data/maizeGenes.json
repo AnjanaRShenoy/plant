@@ -1,6 +1,6 @@
 {
   "tassel": {
-    "trait": "Tassel Development",
+    "trait": "Tassel Morphology",
     "description": "The tassel is the male inflorescence of maize, responsible for pollen production. Its development is controlled by multiple genes that regulate meristem identity, branching patterns, and floral organ formation.",
     "genes": [
       {
@@ -8,7 +8,7 @@
         "symbol": "TRA1",
         "function": "Regulates the transition from vegetative to reproductive meristem. Mutations in TRA1 cause tassel branches to be replaced by ear-like structures.",
         "pathway": "Floral meristem identity pathway",
-        "research": "TRA1 encodes a transcription factor that acts upstream of other tassel development genes. Studies show it interacts with AP2-like genes to maintain tassel identity. Loss-of-function mutants exhibit homeotic transformations where tassel branches develop as ears."
+        "research": "TRA1 encodes a transcription factor that acts upstream of other Tassel Development genes. Studies show it interacts with AP2-like genes to maintain tassel identity. Loss-of-function mutants exhibit homeotic transformations where tassel branches develop as ears."
       },
       {
         "name": "Tasselseed 4",
@@ -22,7 +22,7 @@
         "symbol": "BIF2",
         "function": "Regulates inflorescence branching and meristem maintenance. Required for proper tassel branch initiation and development.",
         "pathway": "Auxin signaling pathway",
-        "research": "BIF2 encodes a serine/threonine protein kinase that regulates auxin transport. Mutations result in reduced tassel branching and barren inflorescences. The gene is essential for maintaining meristem activity during tassel development."
+        "research": "BIF2 encodes a serine/threonine protein kinase that regulates auxin transport. Mutations result in reduced tassel branching and barren inflorescences. The gene is essential for maintaining meristem activity during Tassel development."
       },
       {
         "name": "Indeterminate gametophyte 1",
@@ -75,7 +75,7 @@
     ]
   },
   "stemHeight": {
-    "trait": "Stem Total Height",
+    "trait": "Plant height",
     "description": "Plant height is a critical agronomic trait controlled by multiple genes and environmental factors. Height affects lodging resistance, planting density, and yield. Dwarfing genes have been important in modern maize breeding to reduce lodging and allow higher planting densities.",
     "genes": [
       {

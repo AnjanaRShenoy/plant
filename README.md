@@ -78,13 +78,13 @@ plant/
 
 ## Traits and Genes
 
-### Tassel Development
+### Tassel Morphology
 Genes controlling male inflorescence development and branching patterns.
 
 ### Leaf Angle
 Genes affecting leaf architecture and light capture efficiency.
 
-### Stem Total Height
+### Plant height
 Genes controlling plant height, including dwarfing genes and hormone pathways.
 
 ## License

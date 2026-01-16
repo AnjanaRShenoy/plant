@@ -37,6 +37,23 @@
   opacity: 0.95;
 }
 
+.app-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  text-align: center;
+}
+
+.app-authorship {
+  color: white;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+  padding: 0 1rem;
+}
+
 @media (max-width: 768px) {
   .app {
     padding: 1rem 0.5rem;
@@ -48,6 +65,16 @@
 
   .app-subtitle {
     font-size: 1rem;
+  }
+
+  .app-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .app-authorship {
+    font-size: 0.85rem;
+    padding: 0 0.5rem;
   }
 }
 

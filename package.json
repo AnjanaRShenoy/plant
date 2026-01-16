@@ -22,5 +22,13 @@
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
     "vite": "^5.0.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnjanaRShenoy/plant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AnjanaRShenoy/plant/issues"
+  },
+  "homepage": "https://github.com/AnjanaRShenoy/plant#readme"
 }
