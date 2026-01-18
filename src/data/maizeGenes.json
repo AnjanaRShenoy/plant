@@ -75,7 +75,7 @@
     ]
   },
   "stemHeight": {
-    "trait": "Plant height",
+    "trait": "Plant Height",
     "description": "Plant height is a critical agronomic trait controlled by multiple genes and environmental factors. Height affects lodging resistance, planting density, and yield. Dwarfing genes have been important in modern maize breeding to reduce lodging and allow higher planting densities.",
     "genes": [
       {
@@ -107,7 +107,7 @@
         "research": "BR2 encodes an auxin efflux carrier protein. Mutations result in shortened internodes and reduced plant height. The gene is essential for proper auxin distribution during stem elongation."
       },
       {
-        "name": "Plant height 1",
+        "name": "Plant Height 1",
         "symbol": "PH1",
         "function": "Major QTL controlling plant height. Regulates multiple aspects of stem development including internode number and length.",
         "pathway": "Multiple pathways (pleiotropic effect)",

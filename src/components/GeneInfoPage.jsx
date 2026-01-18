@@ -8,14 +8,14 @@ function GeneInfoPage() {
   const navigate = useNavigate();
   
   // Get the trait from location state or default to first trait
-  const initialTrait = location.state?.trait || 'tassel';
+  const initialTrait = location.state?.trait || 'leafAngle';
   const [activeTrait, setActiveTrait] = useState(initialTrait);
 
-  const traits = ['tassel', 'leafAngle', 'stemHeight'];
+  const traits = ['leafAngle', 'stemHeight', 'tassel'];
   const traitLabels = {
     tassel: 'Tassel Morphology',
     leafAngle: 'Leaf Angle',
-    stemHeight: 'Plant height'
+    stemHeight: 'Plant Height'
   };
 
   const traitImages = {
@@ -37,7 +37,7 @@ function GeneInfoPage() {
           <button className="back-button" onClick={handleBack}>
             ← Back to Plants
           </button>
-          <h1 className="gene-info-title">Maize Genetic Control of Traits</h1>
+          <h1 className="gene-info-title">Genes Regulating Major Plant Architectural Traits in Maize</h1>
           <p className="gene-info-subtitle">Genes controlling key agronomic traits in maize</p>
         </header>
 

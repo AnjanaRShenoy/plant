@@ -24,7 +24,7 @@ function MaizePlantSVG({ onPartClick, highlightedPartId }) {
       },
       stemHeight: {
         id: 'stemHeight',
-        name: 'Plant height',
+        name: 'Plant Height',
         elementId: 'stemHeight',
         hasGeneInfo: true,
         geneTrait: 'stemHeight',

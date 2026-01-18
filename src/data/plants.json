@@ -5,6 +5,28 @@
     "image": "/images/maize.jpg",
     "parts": [
       {
+        "id": "leafAngle",
+        "name": "Leaf Angle",
+        "elementId": "leafAngle",
+        "image": "/images/leafAngle.jpg",
+        "coords": { "top": "26%", "left": "25%", "width": "50%", "height": "25%" },
+        "description": "Leaf angle refers to the angle at which leaves are attached to the stem. This trait affects light capture and canopy architecture.",
+        "function": "Light capture optimization, canopy structure",
+        "hasGeneInfo": true,
+        "geneTrait": "leafAngle"
+      },
+      {
+        "id": "stemHeight",
+        "name": "Plant Height",
+        "elementId": "stemHeight",
+        "image": "/images/stemHeight.jpg",
+        "coords": { "top": "25%", "left": "47%", "width": "6%", "height": "60%" },
+        "description": "Plant height is a critical agronomic trait that affects plant architecture, lodging resistance, and yield potential.",
+        "function": "Structural support, resource allocation",
+        "hasGeneInfo": true,
+        "geneTrait": "stemHeight"
+      },
+      {
         "id": "tassel",
         "name": "Tassel",
         "elementId": "tassel",
@@ -14,28 +36,6 @@
         "function": "Male reproduction, pollen production",
         "hasGeneInfo": true,
         "geneTrait": "tassel"
-      },
-      {
-        "id": "leafAngle",
-        "name": "Leaf Angle",
-        "elementId": "leafAngle",
-        "image": "/images/leafAngle.jpg",
-        "coords": { "top": "45%", "left": "25%", "width": "50%", "height": "25%" },
-        "description": "Leaf angle refers to the angle at which leaves are attached to the stem. This trait affects light capture and canopy architecture.",
-        "function": "Light capture optimization, canopy structure",
-        "hasGeneInfo": true,
-        "geneTrait": "leafAngle"
-      },
-      {
-        "id": "stemHeight",
-        "name": "Plant height",
-        "elementId": "stemHeight",
-        "image": "/images/stemHeight.jpg",
-        "coords": { "top": "25%", "left": "47%", "width": "6%", "height": "60%" },
-        "description": "Plant height is a critical agronomic trait that affects plant architecture, lodging resistance, and yield potential.",
-        "function": "Structural support, resource allocation",
-        "hasGeneInfo": true,
-        "geneTrait": "stemHeight"
       }
     ]
   }

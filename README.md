@@ -84,8 +84,8 @@ Genes controlling male inflorescence development and branching patterns.
 ### Leaf Angle
 Genes affecting leaf architecture and light capture efficiency.
 
-### Plant height
-Genes controlling plant height, including dwarfing genes and hormone pathways.
+### Plant Height
+Genes controlling Plant height, including dwarfing genes and hormone pathways.
 
 ## License
 
