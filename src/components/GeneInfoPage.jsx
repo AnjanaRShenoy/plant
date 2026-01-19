@@ -11,6 +11,52 @@ function GeneInfoPage() {
   const initialTrait = location.state?.trait || 'leafAngle';
   const [activeTrait, setActiveTrait] = useState(initialTrait);
 
+  // Helper function to italicize gene symbols in text
+  const italicizeGeneSymbols = (text, geneSymbol) => {
+    if (!text || !geneSymbol) return text;
+    
+    // Escape special regex characters in the gene symbol
+    const escapedSymbol = geneSymbol.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    
+    // Create regex patterns to match the gene symbol in various forms
+    // Match exact symbol, lowercase, and uppercase versions with word boundaries
+    const patterns = [
+      new RegExp(`\\b${escapedSymbol}\\b`, 'g'),
+      new RegExp(`\\b${escapedSymbol.toLowerCase()}\\b`, 'g'),
+      new RegExp(`\\b${escapedSymbol.toUpperCase()}\\b`, 'g'),
+    ];
+    
+    let result = text;
+    patterns.forEach(pattern => {
+      result = result.replace(pattern, (match) => {
+        // Check if already inside HTML tags (avoid double-wrapping)
+        if (result.indexOf(`<em>${match}</em>`) !== -1) {
+          return match;
+        }
+        return `<em>${match}</em>`;
+      });
+    });
+    
+    return result;
+  };
+
+  // Helper to render text with italicized gene symbols
+  const renderTextWithGenes = (text, allGeneSymbols) => {
+    if (!text) return text;
+    
+    let result = String(text);
+    // Sort by length (longest first) to avoid partial matches
+    const sortedSymbols = [...allGeneSymbols].sort((a, b) => b.length - a.length);
+    
+    // Italicize all gene symbols in the current trait
+    sortedSymbols.forEach(symbol => {
+      result = italicizeGeneSymbols(result, symbol);
+    });
+    
+    // Return as JSX with dangerouslySetInnerHTML (safe here as we control the content)
+    return <span dangerouslySetInnerHTML={{ __html: result }} />;
+  };
+
   const traits = ['leafAngle', 'stemHeight', 'tassel'];
   const traitLabels = {
     tassel: 'Tassel Morphology',
@@ -25,6 +71,9 @@ function GeneInfoPage() {
   };
 
   const currentTraitData = maizeGenesData[activeTrait];
+  
+  // Get all gene symbols for the current trait to italicize them in text
+  const allGeneSymbols = currentTraitData?.genes?.map(gene => gene.symbol) || [];
 
   const handleBack = () => {
     navigate('/');
@@ -78,25 +127,71 @@ function GeneInfoPage() {
               {currentTraitData.genes.map((gene, index) => (
                 <div key={index} className="gene-card">
                   <div className="gene-header">
-                    <h4 className="gene-name">{gene.name}</h4>
-                    <span className="gene-symbol">{gene.symbol}</span>
+                    <div className="gene-name-section">
+                      <h4 className="gene-name">{gene.name}</h4>
+                      <span className="gene-symbol"><em>{gene.symbol}</em></span>
+                      {gene.maizeGDBId && (
+                        <a 
+                          href={`https://www.maizegdb.org/gene_center/gene/${gene.maizeGDBId}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="maizegdb-link"
+                          title="View in MaizeGDB"
+                        >
+                          MaizeGDB: <em>{gene.symbol}</em> (B73 v5: {gene.maizeGDBId})
+                        </a>
+                      )}
+                    </div>
                   </div>
                   
                   <div className="gene-details">
                     <div className="gene-detail-section">
                       <h5 className="gene-detail-label">Function</h5>
-                      <p className="gene-detail-text">{gene.function}</p>
+                      <p className="gene-detail-text">{renderTextWithGenes(gene.function, allGeneSymbols)}</p>
                     </div>
                     
                     <div className="gene-detail-section">
                       <h5 className="gene-detail-label">Biological Pathway</h5>
                       <p className="gene-detail-text">{gene.pathway}</p>
                     </div>
+
+                    {gene.mutations && gene.mutations.length > 0 && (
+                      <div className="gene-detail-section">
+                        <h5 className="gene-detail-label">Major Mutations Identified</h5>
+                        <ul className="mutations-list">
+                          {gene.mutations.map((mutation, mutIndex) => (
+                            <li key={mutIndex} className="mutation-item">
+                              {renderTextWithGenes(mutation, allGeneSymbols)}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                     
                     <div className="gene-detail-section">
                       <h5 className="gene-detail-label">Research Findings</h5>
-                      <p className="gene-detail-text">{gene.research}</p>
+                      <p className="gene-detail-text">{renderTextWithGenes(gene.research, allGeneSymbols)}</p>
                     </div>
+
+                    {gene.references && gene.references.length > 0 && (
+                      <div className="gene-detail-section">
+                        <h5 className="gene-detail-label">References</h5>
+                        <ul className="references-list">
+                          {gene.references.map((ref, refIndex) => (
+                            <li key={refIndex} className="reference-item">
+                              <a 
+                                href={ref.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="reference-link"
+                              >
+                                {ref.text}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

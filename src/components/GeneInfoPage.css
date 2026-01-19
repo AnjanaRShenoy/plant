@@ -165,12 +165,16 @@
 }
 
 .gene-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 1.25rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #dee2e6;
+}
+
+.gene-name-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
 }
 
 .gene-name {
@@ -189,6 +193,35 @@
   font-size: 1rem;
   letter-spacing: 0.5px;
   font-family: 'Courier New', monospace;
+  font-style: italic;
+}
+
+.gene-symbol em {
+  font-style: italic;
+}
+
+.maizegdb-link {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  background: #e3f2fd;
+  border-radius: 4px;
+  border: 1px solid #90caf9;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+}
+
+.maizegdb-link em {
+  font-style: italic;
+}
+
+.maizegdb-link:hover {
+  background: #bbdefb;
+  border-color: #64b5f6;
+  color: #0d47a1;
+  text-decoration: underline;
 }
 
 .gene-details {
@@ -220,6 +253,60 @@
   color: #495057;
   margin: 0;
   text-align: justify;
+}
+
+.mutations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mutation-item {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #495057;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.mutation-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.references-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reference-item {
+  padding: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.reference-link {
+  color: #1976d2;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.reference-link:hover {
+  color: #0d47a1;
+  text-decoration: underline;
+}
+
+.reference-link::after {
+  content: " ↗";
+  font-size: 0.85rem;
+  opacity: 0.7;
 }
 
 @media (max-width: 768px) {
@@ -266,6 +353,16 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
+  }
+
+  .gene-name-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .maizegdb-link {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
   }
 }
 

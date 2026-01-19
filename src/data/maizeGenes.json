@@ -1,126 +1,416 @@
 {
   "tassel": {
     "trait": "Tassel Morphology",
-    "description": "The tassel is the male inflorescence of maize, responsible for pollen production. Its development is controlled by multiple genes that regulate meristem identity, branching patterns, and floral organ formation.",
+    "description": "The tassel is the male inflorescence of maize, responsible for pollen production. Its development is controlled by multiple genes that regulate meristem identity, branching patterns, and floral organ formation. Compact tassels with reduced branching are preferred for high-density planting as they reduce shading and improve light penetration.",
     "genes": [
       {
         "name": "Tassels replace upper ears 1",
-        "symbol": "TRA1",
-        "function": "Regulates the transition from vegetative to reproductive meristem. Mutations in TRA1 cause tassel branches to be replaced by ear-like structures.",
-        "pathway": "Floral meristem identity pathway",
-        "research": "TRA1 encodes a transcription factor that acts upstream of other Tassel Development genes. Studies show it interacts with AP2-like genes to maintain tassel identity. Loss-of-function mutants exhibit homeotic transformations where tassel branches develop as ears."
+        "symbol": "TRU1",
+        "maizeGDBId": "GRMZM2G039867",
+        "function": "Regulates suppression of axillary branch growth. Loss of TRU1 function causes upper ear positions to transform into long male-branch-like structures tipped by tassels.",
+        "pathway": "TB1-TRU1 pathway for plant architecture",
+        "mutations": [
+          "tru1-ws: Loss-of-function mutation causing homeotic transformation of ears to tassel-like branches"
+        ],
+        "research": "TRU1 encodes a BTB/POZ ankyrin domain protein. TB1 directly activates TRU1 by binding to motifs in its regulatory region. The tb1-tru1 pathway contributes to suppressing upper ear elongation and converting tassel-like branches into female ears during maize domestication.",
+        "references": [
+          {
+            "text": "Dong et al. (2017) Nature Communications 8: 14752",
+            "url": "https://doi.org/10.1038/ncomms14752"
+          }
+        ]
       },
       {
         "name": "Tasselseed 4",
         "symbol": "TS4",
-        "function": "Controls sex determination in the tassel. Prevents development of female flowers in the tassel by suppressing carpel development.",
+        "maizeGDBId": "miR172",
+        "function": "Controls sex determination in the tassel. Encodes microRNA172 which targets APETALA2-like transcription factors to prevent development of female flowers in the tassel.",
         "pathway": "Sex determination pathway",
-        "research": "TS4 is a member of the TASSELSEED gene family. It functions to maintain male identity in the tassel by repressing genes required for carpel development. The gene is expressed specifically in tassel primordia and acts through epigenetic mechanisms."
+        "mutations": [
+          "ts4-1: Loss-of-function mutation causing development of female flowers in tassel",
+          "ts4-2: Partial loss-of-function with intermediate phenotype"
+        ],
+        "research": "TS4 encodes microRNA172 (miR172), which targets the APETALA2-like transcription factor indeterminate spikelet1 (ids1/ts6). It functions to maintain male identity in the tassel by repressing genes required for carpel development.",
+        "references": [
+          {
+            "text": "Chuck et al. (2007) Nature Genetics 39: 1517-1521",
+            "url": "https://doi.org/10.1038/ng.2007.20"
+          }
+        ]
       },
       {
         "name": "Barren inflorescence 2",
         "symbol": "BIF2",
-        "function": "Regulates inflorescence branching and meristem maintenance. Required for proper tassel branch initiation and development.",
+        "maizeGDBId": "GRMZM2G171822",
+        "function": "Regulates inflorescence branching and meristem maintenance. Required for proper tassel branch initiation and development. Encodes a serine/threonine protein kinase co-orthologous to Arabidopsis PINOID.",
         "pathway": "Auxin signaling pathway",
-        "research": "BIF2 encodes a serine/threonine protein kinase that regulates auxin transport. Mutations result in reduced tassel branching and barren inflorescences. The gene is essential for maintaining meristem activity during Tassel development."
+        "mutations": [
+          "bif2-1: Null mutation causing severe reduction in tassel branching",
+          "bif2-77: Mu transposon insertion allele",
+          "bif2-RM: Reference mutant allele"
+        ],
+        "research": "BIF2 encodes a serine/threonine protein kinase that phosphorylates ZmPIN1a (auxin efflux carrier) and BA1 (BARREN STALK1 transcription factor). Mutations result in reduced tassel branching, fewer spikelets and florets, and barren inflorescences.",
+        "references": [
+          {
+            "text": "McSteen et al. (2007) Plant Physiology 144: 1000-1011",
+            "url": "https://doi.org/10.1104/pp.107.098558"
+          },
+          {
+            "text": "Skirpan et al. (2009) Plant Cell 21: 1095-1108",
+            "url": "https://doi.org/10.1105/tpc.109.066167"
+          }
+        ]
       },
       {
         "name": "Indeterminate gametophyte 1",
         "symbol": "IG1",
-        "function": "Controls meristem determinacy in the tassel. Regulates when the meristem stops producing new branches.",
-        "pathway": "Meristem determinacy pathway",
-        "research": "IG1 encodes a transcription factor that promotes meristem determinacy. Loss-of-function mutants show indeterminate growth in tassels, producing excessive branches. The gene acts downstream of meristem identity genes."
+        "maizeGDBId": "Zm00001eb107660",
+        "function": "Controls gametophyte development and leaf polarity. Encodes a LOB domain transcription factor similar to Arabidopsis ASYMMETRIC LEAVES2.",
+        "pathway": "Gametophyte development and leaf polarity pathway",
+        "mutations": [
+          "ig1-mum: Mu insertion in first intron causing indeterminate gametophyte growth",
+          "ig1-O: Hopscotch retrotransposon insertion within coding region"
+        ],
+        "research": "IG1 encodes a Lateral Organ Boundaries (LOB) domain protein. Loss-of-function mutants show prolonged free-nuclear divisions in embryo sacs, producing extra egg cells and polar nuclei. In leaves, ig1 mutants show disrupted adaxial-abaxial polarity and ectopic knox gene expression.",
+        "references": [
+          {
+            "text": "Evans (2007) Genetics 175: 1913-1923",
+            "url": "https://doi.org/10.1534/genetics.106.067751"
+          }
+        ]
+      },
+      {
+        "name": "Tasselseed 6 / Indeterminate spikelet 1",
+        "symbol": "TS6/IDS1",
+        "maizeGDBId": "Zm00001eb062460",
+        "function": "Regulates sex determination and spikelet meristem determinacy. Encodes an APETALA2-like transcription factor targeted by ts4/miR172.",
+        "pathway": "Sex determination pathway",
+        "mutations": [
+          "ts6-1: Null mutation with feminized tassel phenotype",
+          "ids1: Allele affecting spikelet determinacy"
+        ],
+        "research": "TS6/IDS1 encodes an APETALA2-like floral homeotic transcription factor. It is the target of ts4/miR172. Mutations cause indeterminate spikelets, increased floral branching, and allow carpel development in tassels.",
+        "references": [
+          {
+            "text": "Chuck et al. (2007) Nature Genetics 39: 1517-1521",
+            "url": "https://doi.org/10.1038/ng.2007.20"
+          },
+          {
+            "text": "Chuck et al. (1998) Genes & Development 12: 1145-1154",
+            "url": "https://doi.org/10.1101/gad.12.8.1145"
+          }
+        ]
+      },
+      {
+        "name": "Ramosa 1",
+        "symbol": "RA1",
+        "maizeGDBId": "Zm00001eb056530",
+        "function": "Controls tassel branch number and architecture. Encodes a C2H2 zinc-finger transcription factor with an EAR repression motif that imposes short-branch identity.",
+        "pathway": "Inflorescence architecture pathway",
+        "mutations": [
+          "ra1-1: Loss-of-function causing increased tassel branching",
+          "ra1-R: Reference allele with normal branching"
+        ],
+        "research": "RA1 encodes a C2H2 zinc-finger transcription factor expressed in a boundary domain near the base of spikelet-pair meristems. Loss of ra1 function causes increased long-branching in both tassels and ears. The gene underwent selection during maize domestication.",
+        "references": [
+          {
+            "text": "Vollbrecht et al. (2005) Nature 436: 1119-1126",
+            "url": "https://doi.org/10.1038/nature03892"
+          },
+          {
+            "text": "Gallavotti et al. (2010) Plant Cell 22: 2121-2134",
+            "url": "https://doi.org/10.1105/tpc.110.075267"
+          }
+        ]
       }
     ]
   },
   "leafAngle": {
     "trait": "Leaf Angle",
-    "description": "Leaf angle is the angle between the leaf blade and the stem. This trait is crucial for optimizing light capture, reducing mutual shading, and improving canopy photosynthesis efficiency. Modern maize breeding has selected for more upright leaves to increase planting density.",
+    "description": "Leaf angle is the angle between the leaf blade and the stem. This trait is crucial for optimizing light capture, reducing mutual shading, and improving canopy photosynthesis efficiency. Modern maize breeding has selected for more upright leaves (narrow leaf angle) to increase planting density. Upright leaves allow more plants per hectare without yield penalty.",
     "genes": [
       {
         "name": "Liguleless 1",
         "symbol": "LG1",
+        "maizeGDBId": "Zm00001eb067740",
         "function": "Controls ligule and auricle development, which directly affects leaf angle. The ligule is a structure at the junction of leaf blade and sheath that influences leaf positioning.",
         "pathway": "Leaf development pathway",
-        "research": "LG1 encodes a SQUAMOSA promoter-binding protein (SBP) transcription factor. Mutations in LG1 result in the absence of ligules and auricles, causing leaves to grow more upright. This gene is a major target for breeding programs aiming to improve canopy architecture."
+        "mutations": [
+          "lg1-1: Complete loss of ligule and auricle, resulting in upright leaves",
+          "lg1-m1: Ac transposon-tagged allele",
+          "Lg1-R: Reference allele with normal ligule development"
+        ],
+        "research": "LG1 encodes a SQUAMOSA promoter-binding protein (SBP) transcription factor. The LG1 protein localizes exclusively to the nucleus and functions cell-autonomously in the adaxial epidermis to instruct ligule formation. Mutations in LG1 result in the absence of ligules and auricles, causing leaves to grow more upright.",
+        "references": [
+          {
+            "text": "Moreno et al. (1997) Genes & Development 11: 616-628",
+            "url": "https://doi.org/10.1101/gad.11.5.616"
+          },
+          {
+            "text": "Moon et al. (2013) Plant Cell 25: 2296-2309",
+            "url": "https://doi.org/10.1105/tpc.113.111757"
+          }
+        ]
       },
       {
         "name": "Liguleless 2",
         "symbol": "LG2",
-        "function": "Works in conjunction with LG1 to regulate ligule development and leaf angle. Acts redundantly with LG1 in controlling leaf architecture.",
+        "maizeGDBId": "Zm00001eb147220",
+        "function": "Works in conjunction with LG1 to regulate ligule development and leaf angle. Specifies the boundary region between leaf blade and sheath.",
         "pathway": "Leaf development pathway",
-        "research": "LG2 encodes a basic leucine zipper (bZIP) transcription factor. Double mutants of lg1 and lg2 show complete absence of ligules and more upright leaves. The gene shows genetic interaction with LG1 in regulating leaf angle."
+        "mutations": [
+          "lg2-1: Loss-of-function mutation affecting ligule development",
+          "lg2-2: Null allele with enhanced upright leaf phenotype when combined with lg1"
+        ],
+        "research": "LG2 encodes a basic leucine zipper (bZIP) transcription factor of 531 amino acids. It is crucial for specifying the boundary region between leaf blade and sheath, including correct development of ligule and auricles. Mutants also have defects in the transition from vegetative to reproductive development.",
+        "references": [
+          {
+            "text": "Walsh et al. (1998) Genetics 149: 607-619",
+            "url": "https://doi.org/10.1093/genetics/149.2.607"
+          },
+          {
+            "text": "Harper & Freeling (1996) Genetics 144: 1871-1882",
+            "url": "https://doi.org/10.1093/genetics/144.4.1871"
+          }
+        ]
       },
       {
         "name": "ZmCLA4",
         "symbol": "ZmCLA4",
-        "function": "Regulates leaf angle through auxin distribution. Controls the asymmetric growth of the leaf base that determines leaf angle.",
-        "pathway": "Auxin signaling and distribution pathway",
-        "research": "ZmCLA4 is a maize ortholog of Arabidopsis CLAVATA genes. It regulates auxin transport in the leaf base region, affecting cell division and expansion patterns that determine leaf angle. Overexpression leads to more upright leaves."
+        "maizeGDBId": "LOC100193776",
+        "function": "Regulates leaf angle through gravitropic response. Controls the asymmetric growth of the leaf base that determines leaf angle. Orthologous to LAZY1 in rice and Arabidopsis.",
+        "pathway": "Gravitropism and auxin signaling pathway",
+        "mutations": [
+          "D132 allele: Lower expression associated with wider leaf angle",
+          "D132-NIL allele: Higher expression associated with narrower (more erect) leaf angle"
+        ],
+        "research": "ZmCLA4 is a transcriptional repressor that negatively regulates leaf angle. Higher transcript levels correlate with narrower (more erect) angles. It affects cell shape and number at the junction of leaf and stem, and modulates gravitropic response. The protein contains a transmembrane domain and nuclear localization signal.",
+        "references": [
+          {
+            "text": "Ku et al. (2011) Journal of Experimental Botany 65: 5063-5076",
+            "url": "https://doi.org/10.1093/jxb/eru271"
+          }
+        ]
       },
       {
         "name": "ZmILI1",
         "symbol": "ZmILI1",
-        "function": "Controls leaf angle by regulating cell elongation in the leaf base. Influences the mechanical properties of the leaf-sheath junction.",
-        "pathway": "Cell elongation pathway",
-        "research": "ZmILI1 encodes a protein involved in brassinosteroid signaling. Mutations result in altered leaf angles due to changes in cell elongation patterns. The gene is expressed in the leaf base region where angle is determined."
+        "maizeGDBId": "Zm00001eb068900",
+        "function": "Controls leaf angle by regulating cell elongation in the leaf base. Encodes a basic helix-loop-helix transcription factor that modulates brassinosteroid biosynthesis.",
+        "pathway": "Brassinosteroid signaling pathway",
+        "mutations": [
+          "zmili1-KO: CRISPR/Cas9 knockout showing reduced leaf angle (more erect leaves)"
+        ],
+        "research": "ZmILI1 encodes a basic helix-loop-helix leucine zipper family transcription factor (HLH domain only, lacking basic DNA-binding region). It directly activates LG1 expression and represses CYP90D1 (brassinosteroid biosynthesis gene). Knockout mutants show reduced leaf angle, confirming its role in leaf architecture.",
+        "references": [
+          {
+            "text": "Tian et al. (2019) Plant Cell 31: 1360-1375",
+            "url": "https://doi.org/10.1105/tpc.18.00910"
+          }
+        ]
       },
       {
-        "name": "Upright Plant Architecture 1",
-        "symbol": "UPA1",
-        "function": "Major QTL controlling leaf angle. Regulates multiple aspects of leaf architecture including angle, size, and orientation.",
-        "pathway": "Multiple pathways (pleiotropic effect)",
-        "research": "UPA1 is a quantitative trait locus that explains significant variation in leaf angle among maize varieties. Fine-mapping studies have identified candidate genes within this region. The locus has been introgressed into modern hybrids to improve canopy architecture."
+        "name": "ZmRAVL1",
+        "symbol": "ZmRAVL1",
+        "maizeGDBId": "Zm00001eb073010",
+        "function": "Regulates leaf angle by controlling brassinosteroid biosynthesis. Encodes a B3-domain-containing transcription factor (ABI3-VP1 family) that modulates leaf architecture.",
+        "pathway": "Brassinosteroid biosynthesis pathway",
+        "mutations": [
+          "UPA2 variant: Cis-regulatory element affecting ZmRAVL1 expression",
+          "ZmRAVL1: Reference allele"
+        ],
+        "research": "ZmRAVL1 activates brd1 (brassinosteroid C-6 oxidase1/UPA1) to alter endogenous BR content and influence leaf angle. The UPA2 locus (9.5 kb upstream) modulates ZmRAVL1 expression by affecting DRL1 binding, which interacts with LG1. The UPA2-ZmRAVL1-UPA1 pathway fine-tunes BR levels and leaf angle. The allele reducing leaf angle originated from teosinte.",
+        "references": [
+          {
+            "text": "Tian et al. (2019) Nature Communications 10: 4790",
+            "url": "https://doi.org/10.1038/s41467-019-12653-4"
+          },
+          {
+            "text": "Li et al. (2020) Journal of Experimental Botany 72: 1782-1795",
+            "url": "https://doi.org/10.1093/jxb/eraa535"
+          }
+        ]
+      },
+      {
+        "name": "ZmLA1 (Lazy plant 1)",
+        "symbol": "ZmLA1",
+        "maizeGDBId": "GRMZM2G135019",
+        "function": "Regulates shoot gravitropism and leaf/tiller angle. Controls the orientation of shoots and leaves relative to gravity through polar auxin transport.",
+        "pathway": "Gravitropism pathway",
+        "mutations": [
+          "la1: Loss-of-function causing prostrate stem phenotype",
+          "ps1 (prostrate stem1): Allelic to la1"
+        ],
+        "research": "ZmLA1 is the maize ortholog of LAZY1 genes in rice and Arabidopsis. It regulates polar auxin transport (PAT): represses basipetal PAT in certain tissues but promotes lateral auxin movement in response to gravity. Mutants show severely reduced shoot gravitropism and defects in reproductive structures including smaller, disorganized ears and tassels.",
+        "references": [
+          {
+            "text": "Dong et al. (2013) Plant Physiology 163: 1306-1322",
+            "url": "https://doi.org/10.1104/pp.113.224881"
+          }
+        ]
       }
     ]
   },
   "stemHeight": {
     "trait": "Plant Height",
-    "description": "Plant height is a critical agronomic trait controlled by multiple genes and environmental factors. Height affects lodging resistance, planting density, and yield. Dwarfing genes have been important in modern maize breeding to reduce lodging and allow higher planting densities.",
+    "description": "Plant height is a critical agronomic trait controlled by multiple genes and environmental factors. Height affects lodging resistance, planting density, and yield. Dwarfing genes have been important in modern maize breeding to reduce lodging and allow higher planting densities. Semi-dwarf varieties are essential for high-density planting systems.",
     "genes": [
       {
         "name": "Dwarf 1",
         "symbol": "D1",
-        "function": "Encodes a key enzyme in gibberellin biosynthesis. Mutations result in dwarf plants due to reduced gibberellin levels.",
+        "maizeGDBId": "Zm00001eb122500",
+        "function": "Encodes gibberellin 3-oxidase (ZmGA3ox2), catalyzing the final step in gibberellin biosynthesis to produce bioactive GAs (GA1, GA3, GA4).",
         "pathway": "Gibberellin biosynthesis pathway",
-        "research": "D1 encodes ent-kaurene synthase, the first committed step in gibberellin biosynthesis. d1 mutants are severely dwarfed and show reduced internode elongation. This gene was crucial in the Green Revolution for developing semi-dwarf varieties."
+        "mutations": [
+          "d1-1: Severe dwarfing mutation with reduced gibberellin levels",
+          "d1-2: Moderate dwarfing allele causing andromonoecy"
+        ],
+        "research": "D1 encodes gibberellin 3-oxidase, which catalyzes the conversion of GA20 to active GA1, GA5 to GA3, etc. The D1 protein is dual-localized to both the nucleus and cytosol. d1 mutants are severely dwarfed and show andromonoecy (male characteristics in female flowers).",
+        "references": [
+          {
+            "text": "Chen et al. (2014) Plant Cell 26: 4376-4393",
+            "url": "https://doi.org/10.1105/tpc.114.130773"
+          },
+          {
+            "text": "Spray et al. (1996) Proceedings of the National Academy of Sciences 93: 10515-10518",
+            "url": "https://doi.org/10.1073/pnas.93.19.10515"
+          }
+        ]
       },
       {
         "name": "Dwarf 3",
         "symbol": "D3",
-        "function": "Involved in gibberellin signaling. Required for gibberellin response and normal stem elongation.",
-        "pathway": "Gibberellin signaling pathway",
-        "research": "D3 encodes a component of the gibberellin receptor complex. Mutations result in gibberellin-insensitive dwarfism. The gene is orthologous to GID1 in rice and plays a central role in gibberellin perception and signal transduction."
+        "maizeGDBId": "Zm00001eb379120",
+        "function": "Encodes a cytochrome P450 enzyme involved in an early step of gibberellin biosynthesis.",
+        "pathway": "Gibberellin biosynthesis pathway",
+        "mutations": [
+          "d3-1: Dwarfing mutation affecting GA biosynthesis",
+          "d3-2::Mu8: Mu transposon insertion allele",
+          "d3-4: Additional characterized allele"
+        ],
+        "research": "D3 encodes a cytochrome P450 enzyme that participates in an early step of the gibberellin biosynthesis pathway. The D3 transcript is expressed in roots, developing leaves, the vegetative meristem, and suspension culture cells. Mutations cause dwarfism due to disrupted GA biosynthesis.",
+        "references": [
+          {
+            "text": "Winkler & Helentjaris (1995) Plant Cell 7: 1307-1317",
+            "url": "https://doi.org/10.1105/tpc.7.8.1307"
+          }
+        ]
       },
       {
         "name": "Dwarf 8",
         "symbol": "D8",
-        "function": "Negative regulator of gibberellin signaling. Acts as a repressor that is degraded in the presence of gibberellin.",
+        "maizeGDBId": "Zm00001eb054480",
+        "function": "Negative regulator of gibberellin signaling. Encodes a DELLA protein that acts as a repressor degraded in the presence of gibberellin.",
         "pathway": "Gibberellin signaling pathway",
-        "research": "D8 encodes a DELLA protein, a key negative regulator of gibberellin responses. Gain-of-function mutations result in dwarf plants that are insensitive to gibberellin. The protein is degraded upon gibberellin binding to its receptor."
+        "mutations": [
+          "D8-1: Gain-of-function mutation with 4-amino-acid deletion plus substitution in DELLA motif causing severe dwarfism",
+          "D8-Mpl: Lacks entire N-terminal region",
+          "D8-1023: Insertion mutation in VHYNP motif"
+        ],
+        "research": "D8 encodes a DELLA protein, a nuclear-localized negative regulator in the gibberellin signaling pathway. Gain-of-function mutations that disrupt DELLA motif result in dwarf plants insensitive to gibberellin because the mutant protein resists GA-mediated degradation.",
+        "references": [
+          {
+            "text": "Peng et al. (1999) Nature 400: 256-261",
+            "url": "https://doi.org/10.1038/22307"
+          },
+          {
+            "text": "Lawit et al. (2010) Plant Physiology 154: 567-576",
+            "url": "https://doi.org/10.1104/pp.110.159152"
+          }
+        ]
       },
       {
         "name": "Brachytic 2",
         "symbol": "BR2",
-        "function": "Regulates auxin transport in the stem. Required for normal internode elongation and plant height.",
+        "maizeGDBId": "Zm00001eb038710",
+        "function": "Encodes ZmABCB1, an ATP-binding cassette (ABC) transporter (P-glycoprotein) involved in polar auxin transport affecting plant height.",
         "pathway": "Auxin transport pathway",
-        "research": "BR2 encodes an auxin efflux carrier protein. Mutations result in shortened internodes and reduced plant height. The gene is essential for proper auxin distribution during stem elongation."
+        "mutations": [
+          "br2-1: Loss-of-function mutation causing shortened lower stalk internodes",
+          "br2-2: Null allele with compact stalk phenotype"
+        ],
+        "research": "BR2 encodes an MDR/P-glycoprotein (ZmABCB1) that mediates polar auxin transport. Mutations result in compact lower stalk internodes while upper parts remain nearly normal. The transporter affects auxin export especially from intercalary meristems in grass stalk nodes.",
+        "references": [
+          {
+            "text": "Multani et al. (2003) Science 302: 81-84",
+            "url": "https://doi.org/10.1126/science.1086072"
+          },
+          {
+            "text": "Knöller et al. (2010) Journal of Experimental Botany 61: 3689-3696",
+            "url": "https://doi.org/10.1093/jxb/erq180"
+          }
+        ]
       },
       {
-        "name": "Plant Height 1",
-        "symbol": "PH1",
-        "function": "Major QTL controlling plant height. Regulates multiple aspects of stem development including internode number and length.",
-        "pathway": "Multiple pathways (pleiotropic effect)",
-        "research": "PH1 is a quantitative trait locus that explains significant variation in plant height. It has been mapped and fine-mapped in multiple populations. The locus contains several candidate genes involved in hormone signaling and cell elongation."
-      },
-      {
-        "name": "ZmGA20ox",
-        "symbol": "ZmGA20ox",
-        "function": "Encodes gibberellin 20-oxidase, a key enzyme in gibberellin biosynthesis. Controls the production of active gibberellins that promote stem elongation.",
+        "name": "Anther ear 1",
+        "symbol": "AN1",
+        "maizeGDBId": "GRMZM2G093195",
+        "function": "Encodes ent-kaurene synthase/cyclase, catalyzing the first committed step in gibberellin biosynthesis (conversion of GGDP to ent-kaurene).",
         "pathway": "Gibberellin biosynthesis pathway",
-        "research": "ZmGA20ox catalyzes the conversion of GA12 to GA20, a critical step in gibberellin biosynthesis. Overexpression increases plant height, while suppression reduces height. The gene is regulated by feedback mechanisms and environmental cues."
+        "mutations": [
+          "an1-1: Loss-of-function causing dwarfism and perfect flowers on ears",
+          "an1-2: Additional characterized allele"
+        ],
+        "research": "AN1 encodes ent-kaurene synthase, the enzyme catalyzing the conversion of geranylgeranyl diphosphate to ent-kaurene, the first step in the tetracyclic diterpenoid pathway of GA biosynthesis. an1 mutants show reduced plant height, delayed maturity, and development of perfect flowers (both male and female parts) on normally pistillate ears.",
+        "references": [
+          {
+            "text": "Bensen et al. (1995) Plant Cell 7: 75-84",
+            "url": "https://doi.org/10.1105/tpc.7.1.75"
+          }
+        ]
+      },
+      {
+        "name": "ZmGA20ox3",
+        "symbol": "ZmGA20ox3",
+        "maizeGDBId": "Zm00001eb145600",
+        "function": "Encodes gibberellin 20-oxidase, a key enzyme in gibberellin biosynthesis. Controls the production of GA20 precursor for active gibberellins.",
+        "pathway": "Gibberellin biosynthesis pathway",
+        "mutations": [
+          "zmga20ox3-1: Loss-of-function with reduced height",
+          "zmga20ox3-OE: Overexpression line with increased height"
+        ],
+        "research": "ZmGA20ox3 catalyzes the conversion of GA12 to GA20, a critical step in gibberellin biosynthesis. This is one of several GA20ox family members in maize (including ZmGA20ox4 and ZmGA20ox5). Overexpression increases plant height, while suppression reduces height.",
+        "references": [
+          {
+            "text": "Chen et al. (2014) Plant Cell 26: 4376-4393",
+            "url": "https://doi.org/10.1105/tpc.114.130773"
+          }
+        ]
+      },
+      {
+        "name": "Dwarf 9",
+        "symbol": "D9",
+        "maizeGDBId": "Zm00001eb216610",
+        "function": "Encodes a DELLA domain protein, a negative regulator of gibberellin signaling. One of two DELLA proteins in maize (along with D8).",
+        "pathway": "Gibberellin signaling pathway",
+        "mutations": [
+          "D9-1: Dominant semi-dwarf mutation with E600K substitution in C-terminal region"
+        ],
+        "research": "D9 is one of two DELLA-domain proteins in maize (the other is D8). These proteins act as negative regulators of gibberellin signaling. The D9-1 allele carries a C-terminal E600K substitution that confers the dominant semi-dwarf phenotype by making the protein resistant to GA-mediated degradation.",
+        "references": [
+          {
+            "text": "Lawit et al. (2010) Plant Physiology 154: 567-576",
+            "url": "https://doi.org/10.1104/pp.110.159152"
+          }
+        ]
+      },
+      {
+        "name": "Brassinosteroid-deficient dwarf 1",
+        "symbol": "BRD1",
+        "maizeGDBId": "GRMZM2G103773",
+        "function": "Encodes brassinosteroid C-6 oxidase, catalyzing the final step in brassinosteroid biosynthesis. Also known as UPA1 (Upright Plant Architecture 1).",
+        "pathway": "Brassinosteroid biosynthesis pathway",
+        "mutations": [
+          "brd1-m1: Mu insertion causing extreme dwarfism and internode elongation defects"
+        ],
+        "research": "BRD1 encodes a brassinosteroid C-6 oxidase participating in the final step of BR biosynthesis. Mutants (brd1-m1) have extreme dwarfism and internode elongation defects, which can be partially rescued by exogenous brassinolide. BRD1/UPA1 is activated by ZmRAVL1 in the leaf angle regulatory pathway.",
+        "references": [
+          {
+            "text": "Makarevitch et al. (2012) Plant Cell 24: 502-517",
+            "url": "https://doi.org/10.1105/tpc.111.094946"
+          }
+        ]
       }
     ]
   }
 }
-
